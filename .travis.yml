@@ -1,0 +1,22 @@
+# https://travis-ci.org
+
+language: cpp
+
+os: linux
+
+dist: trusty
+
+notifications:
+  email: false
+
+before_install:
+  - bash .travis.sh travis_before_install
+
+install:
+  - bash .travis.sh travis_install
+
+script:
+  - bash .travis.sh travis_script
+  
+after_success:
+- bash .travis.sh travis_after_success

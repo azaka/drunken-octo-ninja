@@ -8,6 +8,8 @@ dist: trusty
 
 notifications:
   email: false
+  
+sudo: required
 
 before_install:
   - bash .travis.sh travis_before_install

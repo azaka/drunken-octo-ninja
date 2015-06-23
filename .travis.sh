@@ -24,10 +24,6 @@ travis_script() {
 
 }
 
-travis_after_success() {
-
-}
-
 set -e
 set -x
 

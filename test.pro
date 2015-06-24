@@ -8,4 +8,4 @@ QMAKE_CXXFLAGS *= -Wno-unused-function -Wno-unused-variable -Wno-strict-aliasing
 
 SOURCES += main.cpp
 INCLUDEPATH += $${PWD}/ffmpeg/symbian/armv6/include
-LIBS += -lavutil
+LIBS += -lavutil -lavformat

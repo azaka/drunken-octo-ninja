@@ -1,12 +1,12 @@
 #include <QtCore/QCoreApplication>
-#include <libavformat/avformat.h>
+#include <libavutil/avutil.h>
 #include <QDebug>
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    AVFormatContext* context = avformat_alloc_context();
+    qDebug() << avutil_license();
     
     return a.exec();
 }

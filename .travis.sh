@@ -19,7 +19,7 @@ travis_install() {
 	aria2c -x 16 https://github.com/hrydgard/ppsspp-ffmpeg/archive/master.zip -o master.zip
 	unzip -qq master.zip
 	ls
-	mv -R ppsspp--ffmpeg-master ffmpeg
+	mv ppsspp--ffmpeg-master ffmpeg
 	cp ffmpeg/symbian/armv6/lib/* $EPOCROOT/epoc32/release/armv5/urel/
 }
 

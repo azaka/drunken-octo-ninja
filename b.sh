@@ -9,4 +9,6 @@ cd wagic/projects/mtg
 ls
 
 qmake DEFINES+=USE_PHONON QT+=phonon -spec symbian-sbsv2 wagic-qt.pro
-make -j4 -w -f Makefile.Graphics release-gcce
+ls
+grep -nr release-gcce Makefile.Graphics
+#make -j4 -w -f Makefile.Graphics release-gcce

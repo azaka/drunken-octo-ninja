@@ -1,0 +1,63 @@
+diff --git a/effectset.h b/effectset.h
+index 0c16211..2fe68e3 100644
+--- a/effectset.h
++++ b/effectset.h
+@@ -9,7 +9,11 @@
+ #define EFFECTSET_H_
+ 
+ #include <stdlib.h>
+-#include <array>
++#ifdef __GCCE__
++#   include <boost/array.hpp>
++#else
++#   include <array>
++#endif
+ #include <vector>
+ #include <algorithm>
+ 
+@@ -64,7 +68,11 @@ struct effect_set {
+ 		return container[index];
+ 	}
+ private:
+-	std::array<effect*, 64> container;
++#ifndef __GCCE__
++    std::array<effect*, 64> container;
++#else
++    boost::array<effect*, 64> container;
++#endif
+ 	int count;
+ };
+ 
+diff --git a/field.h b/field.h
+index 8de8e2c..f8214a2 100644
+--- a/field.h
++++ b/field.h
+@@ -15,7 +15,11 @@
+ #include <set>
+ #include <map>
+ #include <list>
+-#include <array>
++#ifndef __GCCE__
++#   include <array>
++#else
++#   include <boost/array.hpp>
++#endif
+ #include <functional>
+ #include <unordered_map>
+ #include <unordered_set>
+@@ -213,8 +217,13 @@ struct processor {
+ 	std::list<effect*> delayed_ntp;
+ 	event_list delayed_tev;
+ 	event_list delayed_ntev;
+-	std::unordered_map<card*, uint32> readjust_map;
+-	std::unordered_set<card*> unique_cards[2];
++#ifdef __GCCE__
++    std::unordered_map<void*, uint32> readjust_map;
++    std::unordered_set<void*> unique_cards[2];
++#else
++    std::unordered_map<card*, uint32> readjust_map;
++    std::unordered_set<card*> unique_cards[2];
++#endif
+ 	std::unordered_map<uint32, uint32> effect_count_code;
+ 	std::unordered_map<uint32, uint32> effect_count_code_duel;
+ 	std::unordered_map<uint32, uint32> spsummon_once_map[2];

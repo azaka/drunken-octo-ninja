@@ -24,7 +24,8 @@ travis_install() {
 }
 
 travis_script() {
-	export EPOCROOT=$(pwd)/SDKs/SymbianSR1Qt474/ COMPILERROOT=$(pwd)/gcc4.8.3_x86-64 SBS_GCCE483BIN=$COMPILERROOT/bin
+	export EPOCROOT=$(pwd)/SDKs/SymbianSR1Qt474 COMPILERROOT=$(pwd)/gcc4.8.3_x86-64 
+	export SBS_GCCE483BIN=$COMPILERROOT/bin
 	PATH=$SBS_GCCE483BIN:$(pwd)/tools/sbs/bin:$EPOCROOT/epoc32/tools:$EPOCROOT/bin:$(pwd)/tools/sbs/linux-x86_64-libc2_15/bin:$PATH
 	
 	chmod +x b.sh

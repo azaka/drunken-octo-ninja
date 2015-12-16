@@ -20,5 +20,8 @@ cd $LUADIR
 EXTRA_CFLAGS="-DCLOCKS_PER_SEC=1000"
 make ansi ALL=a LUA_A="lua.lib" CC="$CC $SYSCFLAGS $EXTRA_CFLAGS" RANLIB=$RANLIB AR="$AR rcu"
 
-#git clone --depth=50 --branch=master git://github.com/github.com/fluorohydride/ygopro-core ygopro-core
+cd $home
+ls
+git clone --branch=master git://github.com/fluorohydride/ygopro-core ygopro-core
+cd ygopro-core
 

@@ -21,7 +21,7 @@ cd $LUADIR
 
 EXTRA_CFLAGS="-DCLOCKS_PER_SEC=1000"
 make ansi ALL=a CC="$CC $SYSCFLAGS $EXTRA_CFLAGS" RANLIB=$RANLIB AR="$AR rcu"
-cp liblua.a $REPO/lua.lib
+sudo cp liblua.a $REPO/lua.lib
 
 cd $home
 ls
@@ -30,12 +30,10 @@ cd ygopro-core
 git checkout -b v1337 fadb219
 git checkout -b build e8420f
 git apply $REPODIR/patch
-git config --global user.name "Your Name"
-git config --global user.email you@example.com
-git commit --quiet -am"patch"
+git commit -am"patch"
 git merge v1337
-git revert 99e817
+git revert 99e817 -m"revert"
 EXTRA_CFLAGS='-DBOOST_COMPILER_CONFIG="\"boost/mpl/aux_/config/gcc.hpp\""'
 $CC $SYSCFLAGS -c *.cpp -I$LUADIR -O2 -fpermissive -std=c++11
 $AR rcu ocgcore.lib *.o
-cp ocgcore.lib $REPO/ocgcore.lib
+sudo cp ocgcore.lib $REPO/ocgcore.lib

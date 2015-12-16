@@ -31,7 +31,7 @@ git checkout -b v1337 fadb219
 git checkout -b build e8420f
 git apply $REPODIR/patch
 git commit -am"patch"
-git merge v1337
+git merge v1337 --quiet
 git revert 99e817 --no-edit
 EXTRA_CFLAGS='-DBOOST_COMPILER_CONFIG="\"boost/mpl/aux_/config/gcc.hpp\""'
 $CC $SYSCFLAGS -c *.cpp -I$LUADIR -O2 -fpermissive -std=c++11

@@ -5,9 +5,9 @@ download_extract() {
 	tar -xf $2
 }
 
-travis_before_install() {
+#travis_before_install() {
 	#git submodule update --init --recursive
-}
+#}
 
 travis_install() {
 	sudo apt-get update

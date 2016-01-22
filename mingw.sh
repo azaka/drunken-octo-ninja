@@ -4,6 +4,6 @@ sudo apt-get update -qq
 sudo apt-cache search mingw
 sudo apt-get install -y gcc-mingw-w64-i686 
 #mingw32-x-freetype mingw32-x-libogg mingw32-x-zlib
-where gcc
+which gcc
 gcc -v
 i686-w64-mingw-gcc -v

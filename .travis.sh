@@ -6,7 +6,7 @@ download_extract() {
 }
 
 travis_before_install() {
-	git submodule update --init --recursive
+	#git submodule update --init --recursive
 }
 
 travis_install() {
@@ -28,8 +28,11 @@ travis_script() {
 	export SBS_GCCE483BIN=$COMPILERROOT/bin
 	PATH=$SBS_GCCE483BIN:$(pwd)/tools/sbs/bin:$EPOCROOT/epoc32/tools:$EPOCROOT/bin:$(pwd)/tools/sbs/linux-x86_64-libc2_15/bin:$PATH
 	
-	chmod +x b.sh
-	./b.sh
+	#chmod +x b.sh
+	#./b.sh
+	chmod +x mingw.sh
+	./mingw.sh
+
 
 }
 

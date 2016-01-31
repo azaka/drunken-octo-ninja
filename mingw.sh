@@ -13,4 +13,4 @@ i686-w64-mingw32-gcc -v
 echo $CC
 CC=i686-w64-mingw32-gcc
 echo $CC
-i686-w64-mingw32-gcc -lsdl
+i686-w64-mingw32-gcc -lmingw32-x-sdl

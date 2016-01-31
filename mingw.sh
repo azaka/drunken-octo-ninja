@@ -10,3 +10,7 @@ ls /usr/bin | grep "mingw"
 gcc -v
 i686-w64-mingw32-gcc -v
 #i686-w64-mingw32-gcc -lfreetype
+echo $CC
+CC=i686-w64-mingw32-gcc
+echo $CC
+i686-w64-mingw32-gcc -lsdl

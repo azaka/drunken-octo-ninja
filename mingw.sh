@@ -8,3 +8,4 @@ which gcc
 ls /usr/bin | grep "mingw"
 gcc -v
 i686-w64-mingw32-gcc -v
+mingw32-gcc -v

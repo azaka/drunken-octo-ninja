@@ -12,7 +12,7 @@ travis_before_install() {
 travis_install() {
 	sudo apt-get update
 	sudo apt-get -y install aria2
-	sudo apt-get -y ffmpeg
+	sudo apt-get -y install ffmpeg
 }
 
 travis_install2() {

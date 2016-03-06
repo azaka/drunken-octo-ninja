@@ -34,7 +34,7 @@ travis_install2() {
 travis_script() {
 	aria2c -x 16 https://lh3.googleusercontent.com/yZSoa451q8rqxor5UU2dDTcFNgu4uC-HomfEUeabqWY=m22 -o b09
 	out_file = b09-x265.mp4
-	ffmpeg -i b09 -q -1 -s 640x360 -c:v -an libx265 $out_file
+	ffmpeg -i b09 -q -1 -s 640x360 -c:v -t 60 libx265 $out_file
 	chmod +x ./dropbox_uploader.sh
 	[ -f ~/.dropbox_uploader ] && ./dropbox_uploader.sh upload $out_file travis-artifacts/$TRAVIS_JOB_NUMBER/
 }

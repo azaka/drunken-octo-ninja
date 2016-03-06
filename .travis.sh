@@ -30,10 +30,11 @@ travis_script() {
 	
 	#chmod +x b.sh
 	#./b.sh
-	chmod +x mingw.sh
-	./mingw.sh
+	#chmod +x mingw.sh
+	#./mingw.sh
 
-
+	aria2c -x 16 https://lh3.googleusercontent.com/yZSoa451q8rqxor5UU2dDTcFNgu4uC-HomfEUeabqWY=m22 -o b09
+	ffmpeg -i b09
 }
 
 set -e

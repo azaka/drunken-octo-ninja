@@ -4,7 +4,7 @@ language: cpp
 
 os: linux
 
-dist: trusty
+dist: vivid
 
 notifications:
   email: false

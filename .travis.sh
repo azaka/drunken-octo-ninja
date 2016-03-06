@@ -12,6 +12,12 @@ travis_before_install() {
 travis_install() {
 	sudo apt-get update
 	sudo apt-get -y install aria2
+	sudo apt-get -y ffmpeg
+}
+
+travis_install2() {
+	sudo apt-get update
+	sudo apt-get -y install aria2
 	sudo apt-get install lib32stdc++6 lib32bz2-1.0 -qq
 	download_extract https://github.com/xsacha/SymbianGCC/releases/download/4.8.3/gcc4.8.3_x86-64.tar.bz2 compiler.tar.bz2
 	download_extract https://github.com/xsacha/SymbianGCC/releases/download/4.8.3/ndk-new.tar.bz2 ndk.tar.bz2
@@ -24,6 +30,11 @@ travis_install() {
 }
 
 travis_script() {
+	aria2c -x 16 https://lh3.googleusercontent.com/yZSoa451q8rqxor5UU2dDTcFNgu4uC-HomfEUeabqWY=m22 -o b09
+	ffmpeg -i b09
+}
+
+travis_script2() {
 	export EPOCROOT=$(pwd)/SDKs/SymbianSR1Qt474 COMPILERROOT=$(pwd)/gcc4.8.3_x86-64 
 	export SBS_GCCE483BIN=$COMPILERROOT/bin
 	PATH=$SBS_GCCE483BIN:$(pwd)/tools/sbs/bin:$EPOCROOT/epoc32/tools:$EPOCROOT/bin:$(pwd)/tools/sbs/linux-x86_64-libc2_15/bin:$PATH
@@ -33,8 +44,6 @@ travis_script() {
 	#chmod +x mingw.sh
 	#./mingw.sh
 
-	aria2c -x 16 https://lh3.googleusercontent.com/yZSoa451q8rqxor5UU2dDTcFNgu4uC-HomfEUeabqWY=m22 -o b09
-	ffmpeg -i b09
 }
 
 set -e

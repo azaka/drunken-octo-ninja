@@ -10,6 +10,7 @@ travis_before_install() {
 }
 
 travis_install() {
+	sudo add-apt-repository ppa:mc3man/trusty-media
 	sudo apt-get update
 	sudo apt-get -y install aria2
 	sudo apt-get -y install ffmpeg
@@ -31,7 +32,7 @@ travis_install2() {
 
 travis_script() {
 	aria2c -x 16 https://lh3.googleusercontent.com/yZSoa451q8rqxor5UU2dDTcFNgu4uC-HomfEUeabqWY=m22 -o b09
-	ffmpeg -i b09 -qscale -1 -s 640x360 -c:v x265 b09-enc
+	ffmpeg -i b09 -q -1 -s 640x360 -c:v x265 b09-enc
 }
 
 travis_script2() {

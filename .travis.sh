@@ -10,8 +10,9 @@ travis_before_install() {
 }
 
 travis_install() {
-	sudo add-apt-repository ppa:mc3man/trusty-media
+	sudo add-apt-repository -y ppa:mc3man/trusty-media
 	sudo apt-get update
+	sudo apt-get -y dist-upgrade
 	sudo apt-get -y install aria2
 	sudo apt-get -y install ffmpeg
 }

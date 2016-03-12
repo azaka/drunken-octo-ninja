@@ -44,8 +44,11 @@ process_url() {
 }
 
 travis_script() {
-	process_url https://lh3.googleusercontent.com/vSZeTBzxHTL25LvuCgv_6EJ9iutlxPeD9xkcnSBt9hc-y0qBkVLW6ZDpcmZykfwFnPAD=m22 p09
-	process_url https://lh3.googleusercontent.com/oX0YxdygpteUlQpuFwBcBflg4ouRmRby_d8ZRXNFHXkGjEeyxIPvUsO26kZjlwnMSkR6=m22 v06
+	process_url https://lh3.googleusercontent.com/qZnxJDCDwDCRLzmm5cMKivJ1_bv_tC2SzTCoVY7IKkKYOeYEilcKOkh3POglCO19a5um=m22 w08
+	process_url https://lh3.googleusercontent.com/aInhl-u-MJi6aMvA-t0DbWp8c2B6nM2uNKBUKBn-N0xJhUg6eRqL4ca-TAK_QZL4kaoQ=m22 b10
+	process_url https://lh3.googleusercontent.com/BHBphBOgBIxabTuypGrb7nOhEP-G3w2XXT8Wv9ZtgpyQ7gMBPSbj6QthkagZkgEnLAPJ=m22 p10
+	process_url https://lh3.googleusercontent.com/8v98E5eisFGh87KtppAGi28ByWaIMNIAJhJu0ZAW0EFMgwJYLsbXZdDrLHvkJcfriiKq=m22 v07
+	process_url https://lh3.googleusercontent.com/_wDkMqBldx9FskesauwAa_CajH5CBCQgzvOyOQUgctS-BUkimw6as7X-_hFVnigYbRb9=m22 n12
 }
 
 travis_script2() {

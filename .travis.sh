@@ -31,9 +31,9 @@ travis_install2() {
 	cp ffmpeg/symbian/armv6/lib/* $EPOCROOT/epoc32/release/armv5/urel/
 }
 
-travis_script() {
-	in_file=p08
-	url=https://lh3.googleusercontent.com/TPc2MAcm8-6kNRuBobJi5VgrTr11yOIyYJ8FccThbBiEhNemRWmXzyiVrM3noBG-VCLU=m22
+process_url() {
+	in_file=$2
+	url=$1
 	
 	aria2c -x 16 $url -o $in_file
 	out_file=$in_file-x265.mp4
@@ -41,6 +41,10 @@ travis_script() {
 	stat $out_file
 	chmod +x ./dropbox_uploader.sh
 	[ -f ~/.dropbox_uploader ] && ./dropbox_uploader.sh upload $out_file travis-artifacts/$TRAVIS_JOB_NUMBER/
+}
+
+travis_script() {
+	process_url https://lh3.googleusercontent.com/PhH1QgGy0j_-PVDSHBVq3MPpWdDjXBHdqoyh-ytdoNVJzIibWcLLncW1FDqZ5ydz7BbM=m22 v05
 }
 
 travis_script2() {

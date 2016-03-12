@@ -32,16 +32,8 @@ travis_install2() {
 }
 
 travis_script() {
-	#aria2c -x 16 https://lh3.googleusercontent.com/yZSoa451q8rqxor5UU2dDTcFNgu4uC-HomfEUeabqWY=m22 -o b09
-	#out_file=b09-x265.mp4
-	#in_file=n10
-	#url=https://lh3.googleusercontent.com/FfM5TAZ2YZis4PoPvqGnxwy6e0lGj5s8O_6IoU_gBVo=m22
-	#in_file=n11
-	#url=https://lh3.googleusercontent.com/8qPE1vA7w6cHHZjUEhuBdr9tAIXsLw8c8TlBkwHVCoU=m22
-	#in_file=r12
-	#url=https://lh3.googleusercontent.com/S9MG5WGIbtgFy54cJqRXREtcnWvH07XeCnQdjDet_co=m22
-	in_file=r13
-	url=https://lh3.googleusercontent.com/cl9nraYR4OQ3OtVF0ZbIonEvzs7ISvRUgSIwUAK0h7E=m37
+	in_file=p08
+	url=https://lh3.googleusercontent.com/TPc2MAcm8-6kNRuBobJi5VgrTr11yOIyYJ8FccThbBiEhNemRWmXzyiVrM3noBG-VCLU=m22
 	
 	aria2c -x 16 $url -o $in_file
 	out_file=$in_file-x265.mp4

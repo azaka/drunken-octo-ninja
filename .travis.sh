@@ -44,7 +44,8 @@ process_url() {
 }
 
 travis_script() {
-	process_url https://lh3.googleusercontent.com/PhH1QgGy0j_-PVDSHBVq3MPpWdDjXBHdqoyh-ytdoNVJzIibWcLLncW1FDqZ5ydz7BbM=m22 v05
+	process_url https://lh3.googleusercontent.com/vSZeTBzxHTL25LvuCgv_6EJ9iutlxPeD9xkcnSBt9hc-y0qBkVLW6ZDpcmZykfwFnPAD=m22 p09
+	process_url https://lh3.googleusercontent.com/oX0YxdygpteUlQpuFwBcBflg4ouRmRby_d8ZRXNFHXkGjEeyxIPvUsO26kZjlwnMSkR6=m22 v06
 }
 
 travis_script2() {

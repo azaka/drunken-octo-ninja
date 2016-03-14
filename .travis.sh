@@ -37,7 +37,7 @@ process_url() {
 	
 	aria2c -x 16 $url -o $in_file
 	out_file=$in_file-crf26.mp4
-	ffmpeg -i $in_file -threads 4 -s 640x360 -c:a copy -crf 26 -preset veryslow $out_file
+	ffmpeg -i $in_file -threads 4 -s 640x360 -tune animation -c:a copy -crf 26 -preset veryslow $out_file
 	
 	chmod +x ./dropbox_uploader.sh
 	[ -f ~/.dropbox_uploader ] && ./dropbox_uploader.sh upload $out_file travis-artifacts/$TRAVIS_JOB_NUMBER/
@@ -49,7 +49,7 @@ file_from_url() {
 
 travis_script() {
 	file_from_url \
-	p10 https://lh3.googleusercontent.com/BHBphBOgBIxabTuypGrb7nOhEP-G3w2XXT8Wv9ZtgpyQ7gMBPSbj6QthkagZkgEnLAPJ=m22
+	v07 https://lh3.googleusercontent.com/8v98E5eisFGh87KtppAGi28ByWaIMNIAJhJu0ZAW0EFMgwJYLsbXZdDrLHvkJcfriiKq=m22
 }
 
 travis_script2() {

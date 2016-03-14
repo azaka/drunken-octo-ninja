@@ -36,8 +36,8 @@ process_url() {
 	url=$1
 	
 	aria2c -x 16 $url -o $in_file
-	out_file=$in_file-crf26-x265.mp4
-	ffmpeg -i $in_file -threads 4 -s 640x360 -c:a copy -c:v libx265 -x265-params crf=26 -preset veryslow $out_file
+	out_file=$in_file-crf26.mp4
+	ffmpeg -i $in_file -threads 4 -s 640x360 -c:a copy -crf 26 -preset veryslow $out_file
 	
 	chmod +x ./dropbox_uploader.sh
 	[ -f ~/.dropbox_uploader ] && ./dropbox_uploader.sh upload $out_file travis-artifacts/$TRAVIS_JOB_NUMBER/

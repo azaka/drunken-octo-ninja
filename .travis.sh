@@ -43,8 +43,13 @@ process_url() {
 	[ -f ~/.dropbox_uploader ] && ./dropbox_uploader.sh upload $out_file travis-artifacts/$TRAVIS_JOB_NUMBER/
 }
 
+file_from_url() {
+	process_url $2 $1
+}
+
 travis_script() {
-	process_url https://lh3.googleusercontent.com/8v98E5eisFGh87KtppAGi28ByWaIMNIAJhJu0ZAW0EFMgwJYLsbXZdDrLHvkJcfriiKq=m22 v07
+	file_from_url \
+	n12 https://lh3.googleusercontent.com/_wDkMqBldx9FskesauwAa_CajH5CBCQgzvOyOQUgctS-BUkimw6as7X-_hFVnigYbRb9=m22
 }
 
 travis_script2() {

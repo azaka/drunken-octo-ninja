@@ -37,7 +37,7 @@ process_url() {
 	
 	aria2c -x 16 $url -o $in_file
 	out_file=$in_file.mp4
-	ffmpeg -i $in_file -threads 4 -s 640x360 -q -1 -c:a copy $out_file
+	ffmpeg -i $in_file -threads 4 -s 640x360 -tune animation -q -1 -c:a copy $out_file
 	
 	chmod +x ./dropbox_uploader.sh
 	[ -f ~/.dropbox_uploader ] && ./dropbox_uploader.sh upload $out_file travis-artifacts/$TRAVIS_JOB_NUMBER/
@@ -49,7 +49,7 @@ file_from_url() {
 
 travis_script() {
 	file_from_url \
-	c02 https://lh3.googleusercontent.com/fLZWW5hwPBopm_U0ByVLsB2-uH44S6spN8ApjJV9uYI0N0-p24dQEAaN_3KqbeYJ1kv1=m22
+	z03 https://lh3.googleusercontent.com/OD8f07e8VnrLtbx7IyTj_7gdJwyQO8qSQDauowRccUTpY0unEVOvOJZJ0PXOxbYiOasZ=m22
 }
 
 travis_script2() {

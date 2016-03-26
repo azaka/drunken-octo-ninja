@@ -49,7 +49,7 @@ file_from_url() {
 
 travis_script() {
 	file_from_url \
-	v22 https://lh3.googleusercontent.com/PBicRA3Djhhxcu_T8sN0toCY1aOnuksnMcxrnOKd1nvhX0Tt8ptbjIIQqP-jJHtRBgf5=m22
+	v23 https://lh3.googleusercontent.com/sbfjmTMKYvCphDsyCwOhLVhcHGvriUqEiaEkrr_Uk35b0nqPiJDTC7ePrgs2-JVsU7RC=m22
 }
 
 travis_script2() {

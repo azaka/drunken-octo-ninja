@@ -6,7 +6,7 @@ download_extract() {
 }
 
 travis_before_install() {
-	#git submodule update --init --recursive
+	git submodule update --init --recursive
 }
 
 travis_install() {

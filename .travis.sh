@@ -33,6 +33,7 @@ travis_script() {
 		cat config.log
 		exit 1
 	}
+	make -j4
 }
 
 

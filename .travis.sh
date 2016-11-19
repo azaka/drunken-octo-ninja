@@ -32,7 +32,7 @@ travis_script() {
 	
 	download_extract ftp://ftp.gnu.org/gnu/nettle/nettle-3.3.tar.gz nettle
 	cd nettle-3.3
-	CFLAGS=$SYSCFLAGS CPP=$SYSCFLAGS CC=arm-none-symbianelf-gcc ./configure --prefix=$HOME/out --host=arm-none-symbianelf --disable-shared || {
+	CFLAGS=$SYSCFLAGS CPPFLAGS=$SYSCFLAGS CC=arm-none-symbianelf-gcc ./configure --prefix=$HOME/out --host=arm-none-symbianelf --disable-shared || {
 		cat config.log
 		exit 1
 	}

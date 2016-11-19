@@ -28,7 +28,7 @@ travis_script() {
 	which qmake
 	
 	EPOCINC=$EPOCROOT/epoc32/include
-	SYSCFLAGS="-D__SUPPORT_CPP_EXCEPTIONS__ -D_UNICODE -D__SYMBIAN32__ -D__EPOC32__ -D__MARM__ -D__EABI__ '-D__PRODUCT_INCLUDE__=\"$EPOCINC/variant/platform_paths.hrh\"' -DUNICODE -D__MARM_ARMV5__ -D__ARMV6__ -D__GCCE_4__ -D__GCCE_4_6__ -DNDEBUG -D__GCCE__ -D__SYMBIAN_STDCPP_SUPPORT__ -include $EPOCINC/gcce/gcce.h -I$EPOCROOT/include -I$EPOCROOT/mkspecs/common/symbian -I$EPOCINC -I$EPOCINC/stdapis -I$EPOCINC/stdapis/sys -I$EPOCINC/stdapis/stlportv5 -I$EPOCINC/variant -I$EPOCINC/stdapis"
+	SYSCFLAGS="-D__SUPPORT_CPP_EXCEPTIONS__ -D_UNICODE -D__SYMBIAN32__ -D__EPOC32__ -D__MARM__ -D__EABI__ -DPRODUCT_INCLUDE='"/home/travis/build/azaka/drunken-octo-ninja/SDKs/SymbianSR1Qt474/epoc32/include/variant/platform_paths.hrh"' -DUNICODE -D__MARM_ARMV5__ -D__ARMV6__ -D__GCCE_4__ -D__GCCE_4_6__ -DNDEBUG -D__GCCE__ -D__SYMBIAN_STDCPP_SUPPORT__ -include $EPOCINC/gcce/gcce.h -I$EPOCROOT/include -I$EPOCROOT/mkspecs/common/symbian -I$EPOCINC -I$EPOCINC/stdapis -I$EPOCINC/stdapis/sys -I$EPOCINC/stdapis/stlportv5 -I$EPOCINC/variant -I$EPOCINC/stdapis"
 	
 	download_extract ftp://ftp.gnu.org/gnu/nettle/nettle-3.3.tar.gz nettle
 	cd nettle-3.3

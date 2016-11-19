@@ -26,6 +26,10 @@ travis_script() {
 	export SBS_GCCE483BIN=$COMPILERROOT/bin
 	PATH=$SBS_GCCE483BIN:$(pwd)/tools/sbs/bin:$EPOCROOT/epoc32/tools:$EPOCROOT/bin:$(pwd)/tools/sbs/linux-x86_64-libc2_15/bin:$PATH
 	which qmake
+	
+	download_extract ftp://ftp.gnu.org/gnu/nettle/nettle-3.3.tar.gz nettle
+	cd nettle-3.3
+	./configure --prefix=$HOMW/out --host=arm-none-symbianelf
 }
 
 

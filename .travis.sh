@@ -29,7 +29,7 @@ travis_script() {
 	
 	download_extract ftp://ftp.gnu.org/gnu/nettle/nettle-3.3.tar.gz nettle
 	cd nettle-3.3
-	CC=arm-none-symabianelf-gcc ./configure --prefix=$HOME/out --host=arm-none-symbianelf
+	CC=arm-none-symabianelf-gcc ./configure --prefix=$HOME/out --host=arm-none-symbianelf || cat config.log && exit 1
 }
 
 

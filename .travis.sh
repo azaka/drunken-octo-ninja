@@ -19,7 +19,7 @@ travis_install() {
 
 travis_script() {
 	download_extract ftp://ftp.gnu.org/gnu/nettle/nettle-3.3.tar.gz nettle
-	cd nettle
+	cd nettle-3.3
 	./configure --prefix=$HOMW/out
 	make -j4
 }

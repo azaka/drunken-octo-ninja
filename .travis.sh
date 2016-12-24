@@ -20,26 +20,35 @@ travis_install() {
 }
 
 travis_script() {
+	# this script installs GCC 4.9.3 
+	# to use it navigate to your home directory and type:
+	# sh install-gcc-4.9.3.sh
 
+	# download and install gcc 4.9.3
+	wget https://ftp.gnu.org/gnu/gcc/gcc-4.9.3/gcc-4.9.3.tar.gz
+	tar xzf gcc-4.9.3.tar.gz
+	cd gcc-4.9.3
+	./contrib/download_prerequisites
+	cd ..
+	mkdir objdir
+
+	cd objdir
+	../gcc-4.9.3/configure --prefix=$HOME/gcc-4.9.3 --enable-languages=c,c++,fortran,go --disable-multilib
+	make
+
+	# install
+	make install
+
+	# clean up
+	rm -rf ~/objdir
+	rm -f ~/gcc-4.9.3.tar.gz
+
+	# add to path (you may want to add these lines to $HOME/.bash_profile)
+	export PATH=$HOME/gcc-4.9.3/bin:$PATH
+	export LD_LIBRARY_PATH=$HOME/gcc-4.9.3/lib:$HOME/gcc-4.9.3/lib64:$LD_LIBRARY_PATH
 	
-	export EPOCROOT=$(pwd)/SDKs/SymbianSR1Qt474 COMPILERROOT=$(pwd)/gcc4.8.3_x86-64 
-	export SBS_GCCE483BIN=$COMPILERROOT/bin
-	PATH=$SBS_GCCE483BIN:$(pwd)/tools/sbs/bin:$EPOCROOT/epoc32/tools:$EPOCROOT/bin:$(pwd)/tools/sbs/linux-x86_64-libc2_15/bin:$PATH
-	which qmake
-	
-	EPOCINC=$EPOCROOT/epoc32/include
-	SYSCFLAGS="-D__need_getopt -D__SUPPORT_CPP_EXCEPTIONS__ -D_UNICODE -D__SYMBIAN32__ -D__EPOC32__ -D__MARM__ -D__EABI__ -DPRODUCT_INCLUDE='"/home/travis/build/azaka/drunken-octo-ninja/SDKs/SymbianSR1Qt474/epoc32/include/variant/platform_paths.hrh"' -DUNICODE -D__MARM_ARMV5__ -D__ARMV6__ -D__GCCE_4__ -D__GCCE_4_6__ -DNDEBUG -D__GCCE__ -D__SYMBIAN_STDCPP_SUPPORT__ -include $EPOCINC/gcce/gcce.h -I$EPOCROOT/include -I$EPOCROOT/mkspecs/common/symbian -I$EPOCINC -I$EPOCINC/stdapis -I$EPOCINC/stdapis/sys -I$EPOCINC/stdapis/stlportv5 -I$EPOCINC/variant -I$EPOCINC/stdapis"
-	
-	download_extract ftp://ftp.gnu.org/gnu/nettle/nettle-3.3.tar.gz nettle
-	cd nettle-3.3
-	CFLAGS=$SYSCFLAGS CPPFLAGS=$SYSCFLAGS CC=arm-none-symbianelf-gcc ./configure --prefix=$HOME/out --host=arm-none-symbianelf --disable-shared || {
-		cat config.log
-		exit 1
-	}
-	make -j4 || {
-		cat config.log
-		exit 1
-	}
+	which gcc
+
 }
 
 

@@ -35,6 +35,6 @@ git merge v1337 > /dev/null 2>&1
 echo
 git revert 99e817 --no-edit
 EXTRA_CFLAGS='-DBOOST_COMPILER_CONFIG="\"boost/mpl/aux_/config/gcc.hpp\""'
-$CC $SYSCFLAGS -c *.cpp -I$LUADIR -O2 -fpermissive -std=c++11
+$CC $SYSCFLAGS $EXTRA_CFLAGS -c *.cpp -I$LUADIR -O2 -fpermissive -std=c++11
 $AR rcu ocgcore.lib *.o
 sudo cp ocgcore.lib $REPO/ocgcore.lib

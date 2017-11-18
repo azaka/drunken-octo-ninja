@@ -16,15 +16,13 @@ REPODIR=$(pwd)
 cd $home
 wget http://www.lua.org/ftp/lua-5.2.4.tar.gz
 tar -zxf lua-5.2.4.tar.gz
-LUADIR=lua-5.2.4/src
-cd $LUADIR
-
+LUADIR=lua-5.2.4
 EXTRA_CFLAGS="-DCLOCKS_PER_SEC=1000"
-make ansi ALL=a CC="$CC $SYSCFLAGS $EXTRA_CFLAGS" RANLIB=$RANLIB AR="$AR rcu"
+make ansi CC="$CC $SYSCFLAGS $EXTRA_CFLAGS" RANLIB=$RANLIB AR="$AR rcu"
 sudo cp liblua.a $REPO/lua.lib
-make install INSTALL_TOP=$REPO/gcce/usr
-ls $REPO
-ls $REPO/gcce/usr
+make install INSTALL_TO=$REPODIR/gcce/usr
+ls $REPODIR
+ls $REPODIR/gcce/usr
 
 cd $home
 ls

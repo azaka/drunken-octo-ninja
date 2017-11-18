@@ -21,7 +21,7 @@ travis_install() {
 
 travis_script() {
 	export EPOCROOT=$(pwd)/SDKs/SymbianSR1Qt474/
-
+	export COMPILERROOT=$(pwd)/gcc4.8.3_x86-64
 	chmod +x b.sh
 	./b.sh
 }

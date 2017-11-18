@@ -22,6 +22,9 @@ cd $LUADIR
 EXTRA_CFLAGS="-DCLOCKS_PER_SEC=1000"
 make ansi ALL=a CC="$CC $SYSCFLAGS $EXTRA_CFLAGS" RANLIB=$RANLIB AR="$AR rcu"
 sudo cp liblua.a $REPO/lua.lib
+make install INSTALL_TOP=$REPO/gcce/usr
+ls $REPO
+ls $REPO/gcce/usr
 
 cd $home
 ls
@@ -34,7 +37,7 @@ git commit -am"patch"
 git merge v1337 > /dev/null 2>&1
 echo
 git revert 99e817 --no-edit
-EXTRA_CFLAGS='-DBOOST_COMPILER_CONFIG="\"boost/mpl/aux_/config/gcc.hpp\""'
-$CC $SYSCFLAGS $EXTRA_CFLAGS -c *.cpp -I$LUADIR -O2 -fpermissive -std=c++11
-$AR rcu ocgcore.lib *.o
-sudo cp ocgcore.lib $REPO/ocgcore.lib
+# EXTRA_CFLAGS="-DBOOST_COMPILER_CONFIG='"boost/mpl/aux_/config/gcc.hpp"'"
+# $CC $SYSCFLAGS $EXTRA_CFLAGS -c *.cpp -I$LUADIR -O2 -fpermissive -std=c++11
+# $AR rcu ocgcore.lib *.o
+# sudo cp ocgcore.lib $REPO/ocgcore.lib

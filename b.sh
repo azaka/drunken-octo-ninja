@@ -21,7 +21,7 @@ cd $LUADIR
 EXTRA_CFLAGS="-DCLOCKS_PER_SEC=1000"
 make ansi CC="$CC $SYSCFLAGS $EXTRA_CFLAGS" RANLIB=$RANLIB AR="$AR rcu"
 sudo cp liblua.a $REPO/lua.lib
-make install INSTALL_TO=$REPODIR/gcce/usr
+make install INSTALL_TOP=$REPODIR/gcce/usr
 ls $REPODIR
 ls $REPODIR/gcce/usr
 

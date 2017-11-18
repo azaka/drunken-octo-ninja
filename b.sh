@@ -17,6 +17,7 @@ cd $home
 wget http://www.lua.org/ftp/lua-5.2.4.tar.gz
 tar -zxf lua-5.2.4.tar.gz
 LUADIR=lua-5.2.4
+cd $LUADIR
 EXTRA_CFLAGS="-DCLOCKS_PER_SEC=1000"
 make ansi CC="$CC $SYSCFLAGS $EXTRA_CFLAGS" RANLIB=$RANLIB AR="$AR rcu"
 sudo cp liblua.a $REPO/lua.lib

@@ -17,6 +17,8 @@ travis_install() {
 	download_extract https://github.com/xsacha/SymbianGCC/releases/download/4.8.3/gcc4.8.3_x86-64.tar.bz2 compiler.tar.bz2
 	download_extract https://github.com/xsacha/SymbianGCC/releases/download/4.8.3/ndk-new.tar.bz2 ndk.tar.bz2
 	export EPOCROOT=$(pwd)/SDKs/SymbianSR1Qt474/ SBS_GCCE483BIN=$(pwd)/gcc4.8.3_x86-64/bin
+	
+	cp $EPOCROOT/epoc32/release/armv5/lib/libm.dso $EPOCROOT/epoc32/release/armv5/lib/libm.a
 }
 
 travis_script() {

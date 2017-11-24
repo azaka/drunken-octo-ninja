@@ -41,3 +41,5 @@ wget https://github.com/cjrgames/emscripten/archive/master.zip && \
 unzip -q master && \
 cd emscripten-master/irrlicht-ogl-es && \
 make -j7 irrlicht
+cd irrlicht/examples/01.HelloWorld
+emmake make -f Makefile.emscripten

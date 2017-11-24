@@ -34,3 +34,10 @@ EXTRA_CFLAGS="-DCLOCKS_PER_SEC=1000"
 make ansi LDFLAGS="$LDFLAGS" CC="$CC $SYSCFLAGS $EXTRA_CFLAGS" RANLIB=$RANLIB AR="$AR rcu"
 make install INSTALL_TOP=$REPODIR/gcce/usr
 
+cd $HOME
+sudo apt-get install emscripten
+emcc -v
+wget https://github.com/cjrgames/emscripten/archive/master.zip && \
+unzip -q master && \
+cd emscripten-master/irrlicht-ogl-es && \
+make -j7 irrlicht

@@ -26,6 +26,10 @@ travis_script() {
 	export COMPILERROOT=$(pwd)/gcc4.8.3_x86-64
 	chmod +x b.sh
 	./b.sh
+	
+	cd $TRAVIS_BUILD_DIR
+	chmod +x build-opengapps.sh
+	./build-opengapps.sh
 }
 
 

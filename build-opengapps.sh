@@ -1,8 +1,10 @@
 #/bin/bash
 
-sudo apt-get update
+SUDO=sudo
+$SUDO apt-get update
 # install required tools
-sudo apt-get install realpath zip lzip unzip wget openjdk-8-jdk git build-essential -y
+$SUDO apt-get install python3-pip realpath zip lzip unzip wget openjdk-8-jdk git build-essential -y
+python3 -m pip install requests bs4 pytz
 
 # setup android sdk
 # download the "sdk manager"
@@ -18,4 +20,4 @@ export PATH=$(pwd)/build-tools/27.0.1:$PATH
 # git clone git@github.com:opengapps/opengapps.git
 git clone https://github.com/opengapps/opengapps && cd opengapps && \
 ./download_sources.sh --shallow arm
-make
+make -j7

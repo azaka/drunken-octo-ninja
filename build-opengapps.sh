@@ -4,7 +4,8 @@ SUDO=sudo
 $SUDO apt-get update
 # install required tools
 $SUDO apt-get install python3-pip realpath zip lzip unzip wget openjdk-8-jdk git build-essential -y
-python3 -m pip install requests bs4 pytz pycrypto beautifulsoup4 html5lib protobuf requests pytz
+python3 -m pip install bs4 pytz pycrypto beautifulsoup4 html5lib protobuf requests pytz
+python3 -m pip install requests --upgrade
 
 # setup android sdk
 # download the "sdk manager"

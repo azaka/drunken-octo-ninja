@@ -2,7 +2,7 @@
 
 sudo apt-get update
 # install required tools
-sudo apt-get install zip lzip unzip wget openjdk-8-jdk git build-essential -y
+sudo apt-get install realpath zip lzip unzip wget openjdk-8-jdk git build-essential -y
 
 # setup android sdk
 # download the "sdk manager"

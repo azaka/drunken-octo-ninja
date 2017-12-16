@@ -6,6 +6,8 @@ os: linux
 
 dist: trusty
 
+services: docker
+
 notifications:
   email: false
   

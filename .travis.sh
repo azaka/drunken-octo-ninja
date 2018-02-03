@@ -29,7 +29,7 @@ travis_script() {
 	
 	cd $TRAVIS_BUILD_DIR
 	chmod +x build-opengapps.sh
-	./build-opengapps.sh
+	# ./build-opengapps.sh
 }
 
 

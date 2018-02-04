@@ -25,7 +25,7 @@ tar -xf cmake-3.10.2.tar.gz
 cd cmake-3.10.2
 ./configure
 # checkinstall
-make -j7 && make install
+make -j7 && sudo make install
 
 # sdl 2.0.7
 cd $BUILD_DIR
@@ -33,7 +33,7 @@ wget https://www.libsdl.org/release/SDL2-2.0.7.tar.gz
 tar -xf SDL2-2.0.7.tar.gz
 cd SDL2-2.0.7
 ./configure
-make -j7 && make install
+make -j7 && sudo make install
 
 # unicorn
 cd $BUILD_DIR
@@ -41,7 +41,7 @@ wget https://github.com/unicorn-engine/unicorn/archive/1.0.1.tar.gz
 tar -xf 1.0.1.tar.gz
 cd unicorn-1.0.1
 ./make.sh
-make install
+sudo make install
 
 # vita3k
 cd $BUILD_DIR
@@ -49,6 +49,6 @@ cd $BUILD_DIR
 cmake .. -DCMAKE_CXX_COMPILER=g++-5
 #cmake ..
 
-make -j7 && make install
+make -j7 && sudo make install
 
 # src/emulator/Vita3k <vpk file>

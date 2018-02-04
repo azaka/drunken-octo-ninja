@@ -6,6 +6,8 @@
 # runs as root
 # ubuntu 16.04
 
+sudo apt-add-repository --yes ppa:zoogie/sdl2-snapshots 
+sudo apt-get update
 sudo apt-get install libsdl2-dev -y
 sudo apt-get remove libsdl2-dev cmake -y
 

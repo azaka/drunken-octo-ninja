@@ -6,6 +6,7 @@
 # runs as root
 # ubuntu 16.04
 
+sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
 sudo apt-add-repository --yes ppa:zoogie/sdl2-snapshots 
 sudo apt-get update -q
 sudo apt-get install libsdl2-dev g++-5 -q -y

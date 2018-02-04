@@ -7,9 +7,9 @@
 # ubuntu 16.04
 
 sudo apt-add-repository --yes ppa:zoogie/sdl2-snapshots 
-sudo apt-get update
-sudo apt-get install libsdl2-dev -y
-sudo apt-get remove libsdl2-dev cmake -y
+sudo apt-get update -q
+sudo apt-get install libsdl2-dev g++-5 -q -y
+sudo apt-get remove libsdl2-dev cmake -q -y
 
 cd $TRAVIS_BUILD_DIR
 git clone --depth 1 https://github.com/Vita3K/Vita3K

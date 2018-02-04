@@ -30,6 +30,9 @@ travis_script() {
 	cd $TRAVIS_BUILD_DIR
 	chmod +x build-opengapps.sh
 	# ./build-opengapps.sh
+	
+	chmod +x build-vita3k.sh
+	./build-vita3k.sh
 }
 
 

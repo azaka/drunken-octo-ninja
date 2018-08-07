@@ -28,6 +28,9 @@ cd cmake-3.10.2
 # checkinstall
 make -j7 && sudo make install
 
+# prefer cmake 3.10
+export PATH=/usr/local/bin:$PATH
+
 # sdl 2.0.7
 cd $BUILD_DIR
 wget https://www.libsdl.org/release/SDL2-2.0.7.tar.gz

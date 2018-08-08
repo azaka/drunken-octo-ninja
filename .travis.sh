@@ -32,7 +32,7 @@ travis_script() {
 	# ./build-opengapps.sh
 	
 	chmod +x build-vita3k.sh
-	./build-vita3k.sh
+	# ./build-vita3k.sh
 }
 
 

@@ -33,6 +33,9 @@ travis_script() {
 	
 	chmod +x build-vita3k.sh
 	# ./build-vita3k.sh
+	
+	chmod +x build-webxoss.sh
+	./build-webxoss.sh
 }
 
 

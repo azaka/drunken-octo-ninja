@@ -37,8 +37,14 @@ travis_script() {
 	chmod +x build-webxoss.sh
 	./build-webxoss.sh
 	
-	chmod + vgmstream-build.sh
+	chmod +x vgmstream-build.sh
 	./vgmstream-build.sh
+	
+	cd $TRAVIS_BUILD_DIR
+	wget https://github.com/devkitPro/pacman/releases/download/devkitpro-pacman-1.0.1/devkitpro-pacman.deb && \
+	sudo dpkg -i devkitpro-pacman.deb && \
+	export DEVKITPRO=/opt/devkitpro && \
+	dkp-pacman -S devkitA64 devkitpro-pkgbuild-helpers --noconfirm
 }
 
 

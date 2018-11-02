@@ -36,6 +36,9 @@ travis_script() {
 	
 	chmod +x build-webxoss.sh
 	./build-webxoss.sh
+	
+	chmod + vgmstream-build.sh
+	./vgmstream-build.sh
 }
 
 

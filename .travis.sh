@@ -44,7 +44,7 @@ travis_script() {
 	wget https://github.com/devkitPro/pacman/releases/download/devkitpro-pacman-1.0.1/devkitpro-pacman.deb && \
 	sudo dpkg -i devkitpro-pacman.deb && \
 	export DEVKITPRO=/opt/devkitpro && \
-	dkp-pacman -S devkitA64 devkitpro-pkgbuild-helpers --noconfirm
+	sudo dkp-pacman -S devkitA64 devkitpro-pkgbuild-helpers --noconfirm
 }
 
 

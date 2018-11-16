@@ -46,9 +46,6 @@ travis_script() {
 	export DEVKITPRO=/opt/devkitpro && \
 	sudo dkp-pacman -S devkitA64 devkitpro-pkgbuild-helpers --noconfirm
 	
-	cd $TRAVIS_BUILD_DIR
-	wget https://transfer.sh/15kKtu/packages.tar.xz
-	tar xf packages.tar.xz
 }
 
 

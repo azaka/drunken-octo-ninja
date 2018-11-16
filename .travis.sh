@@ -7,6 +7,7 @@ download_extract() {
 
 travis_before_install() {
 	git submodule update --init --recursive
+	python2 -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); fcntl.fcntl(sys.stdout, fcntl.F_SETFL, flags&~os.O_NONBLOCK);'
 }
 
 travis_install() {

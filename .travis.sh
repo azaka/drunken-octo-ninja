@@ -28,14 +28,14 @@ travis_script() {
 	./b.sh
 
 	cd $TRAVIS_BUILD_DIR
-	git clone --depth 1 https://github.com/termux/x11-package
+	git clone --depth 1 https://github.com/termux/x11-packages
 	cd  x11-packages && ./scripts/travis-build.sh || true
 
 	cd termux-packages
 	export TERMUX_BUILD_ROOT=$(pwd)
 
 	# restore build artifacts from private container image
-	docker login -u $QUAY_USERNAME -p $QUAY_PASSWORD quay.io
+	docker login -u azaka -p $QUAY_PASSWORD quay.io
 	artifacts_container=$(docker create quay.io/azaka/x11-data)
 	docker cp $artifacts_container:/home/sam/data.tar $TERMUX_BUILD_ROOT
 	$TERMUX_BUILD_ROOT/scripts/run-docker.sh tar xf data.tar -C /

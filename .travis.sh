@@ -46,6 +46,8 @@ travis_script() {
 	export DEVKITPRO=/opt/devkitpro && \
 	sudo dkp-pacman -S devkitA64 devkitpro-pkgbuild-helpers --noconfirm
 	
+	cd $TRAVIS_BUILD_DIR
+	./mahjong-build.sh
 }
 
 

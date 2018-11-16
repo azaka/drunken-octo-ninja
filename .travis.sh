@@ -45,9 +45,8 @@ travis_script() {
 
 	# package already built
 	$TERMUX_BUILD_ROOT/scripts/run-docker.sh ./build-package.sh gtk2
+	export TERMUX_BUILD_OPTS=-q
 
-
-	
 	cd $TRAVIS_BUILD_DIR
 	chmod +x build-opengapps.sh
 	# ./build-opengapps.sh

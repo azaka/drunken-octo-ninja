@@ -40,6 +40,9 @@ travis_script() {
 	docker cp $artifacts_container:/home/sam/data.tar $TERMUX_BUILD_ROOT
 	$TERMUX_BUILD_ROOT/scripts/run-docker.sh tar xf data.tar -C /
 
+	# test packages
+	tar xf $TRAVIS_BUILD_DIR/packages.tar.xz -C $TERMUX_BUILD_ROOT
+
 	# package already built
 	$TERMUX_BUILD_ROOT/scripts/run-docker.sh ./build-package.sh gtk2
 

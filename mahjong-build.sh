@@ -9,6 +9,4 @@ cd mj-1.14-src
 make
 
 # termux-x11
-cd $TRAVIS_BUILD_DIR
-tar xf packages.tar.xz -C $TERMUX_BUILD_ROOT
 $TERMUX_BUILD_ROOT/scripts/run-docker.sh ./build-package.sh mahjong

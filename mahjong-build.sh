@@ -10,6 +10,5 @@ make
 
 # termux-x11
 cd $TRAVIS_BUILD_DIR
-wget https://transfer.sh/5NDQZ/packages.tar.xz
-tar xf packages.tar.xz
-
+tar xf packages.tar.xz -C $TERMUX_BUILD_ROOT
+$TERMUX_BUILD_ROOT/scripts/run-docker.sh ./build-package.sh mahjong

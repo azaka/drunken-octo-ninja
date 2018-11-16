@@ -13,5 +13,3 @@ libvorbis-dev audacious-dev libglib2.0-dev libgtk2.0-dev libpango1.0-dev
 ./configure
 make -j7 -f Makefile.autotools
 
-# termux
-git clone --depth 1 https://github.com/termux/x11-packages && cd x11-packages && ./scripts/travis-build.sh || true

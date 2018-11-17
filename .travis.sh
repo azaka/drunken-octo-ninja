@@ -30,7 +30,9 @@ travis_script() {
 
 	cd $TRAVIS_BUILD_DIR
 	git clone --depth 1 https://github.com/termux/x11-packages
-	cd  x11-packages && ./scripts/travis-build.sh || true
+	cd  x11-packages
+	export TERMUX_X11_BUILD_ROOT=$(pwd)
+	$TERMUX_X11_BUILD_ROOT/scripts/travis-build.sh || true
 
 	cd termux-packages
 	export TERMUX_BUILD_ROOT=$(pwd)

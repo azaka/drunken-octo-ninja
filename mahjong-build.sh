@@ -9,4 +9,5 @@ cd mj-1.14-src
 make
 
 # termux-x11
-$TERMUX_X11_BUILD_ROOT/scripts/travis-build.sh mahjong
+cd $TERMUX_X11_BUILD_ROOT
+./scripts/travis-build.sh mahjong

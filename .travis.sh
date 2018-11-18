@@ -50,6 +50,19 @@ travis_script() {
 	$TERMUX_BUILD_ROOT/scripts/run-docker.sh ./build-package.sh gtk2
 	export TERMUX_BUILD_OPTS=-q
 
+	# setup gnu c compiler
+	cd $TERMUX_BUILD_ROOT
+	wget https://dl.google.com/android/repository/android-ndk-r17b-Linux-x86_64.zip
+	unzip -q $TERMUX_BUILD_ROOT/android-ndk-r17b-Linux-x86_64.zip
+	rm $TERMUX_BUILD_ROOT/android-ndk-r17b-Linux-x86_64.zip
+	export NDK=$TERMUX_BUILD_ROOT/android-ndk-r17b
+	export TOOLCHAIN=$TERMUX_BUILD_ROOT/toolchain
+	$NDK/build/tools/make_standalone_toolchain.py --api 21 --arch arm64 --stl=gnustl --install-dir $TOOLCHAIN
+
+	# fix linker errors
+	cp $TOOLCHAIN/aarch64-linux-android/bin/ld.gold $TOOLCHAIN/aarch64-linux-android/bin/ld
+
+
 	cd $TRAVIS_BUILD_DIR
 	chmod +x build-opengapps.sh
 	# ./build-opengapps.sh

@@ -13,3 +13,5 @@ libvorbis-dev audacious-dev libglib2.0-dev libgtk2.0-dev libpango1.0-dev
 ./configure
 make -j7 -f Makefile.autotools
 
+# termux
+$TERMUX_BUILD_ROOT/scripts/run-docker.sh ./build-package.sh $TERMUX_BUILD_OPTS vgmstream

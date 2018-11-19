@@ -52,7 +52,7 @@ travis_script() {
 
 	# setup gnu c compiler
 	cd $TERMUX_BUILD_ROOT
-	wget https://dl.google.com/android/repository/android-ndk-r17b-Linux-x86_64.zip
+	wget -q https://dl.google.com/android/repository/android-ndk-r17b-Linux-x86_64.zip
 	unzip -q $TERMUX_BUILD_ROOT/android-ndk-r17b-Linux-x86_64.zip
 	rm $TERMUX_BUILD_ROOT/android-ndk-r17b-Linux-x86_64.zip
 	export NDK=$TERMUX_BUILD_ROOT/android-ndk-r17b

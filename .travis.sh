@@ -35,6 +35,8 @@ travis_script() {
 	# restore travis-build.sh
 	wget https://github.com/termux/x11-packages/raw/bbc018011155c57cfbd6a3a941e77ba74fe0f4a1/scripts/travis-build.sh -O scripts/travis-build.sh
 	chmod +x scripts/travis-build.sh
+	wget https://github.com/termux/x11-packages/raw/0e7317b8b4ab3f2ca6a512dfce751ae7cb1951a9/scripts/setup-build-environment.sh -O scripts/setup-build-environment.sh
+	chmod +x scripts/setup-build-environment.sh
 	
 	export TERMUX_X11_BUILD_ROOT=$(pwd)
 	$TERMUX_X11_BUILD_ROOT/scripts/travis-build.sh || true

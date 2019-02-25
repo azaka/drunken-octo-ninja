@@ -55,6 +55,8 @@ travis_script() {
 
 	# package already built
 	$TERMUX_BUILD_ROOT/scripts/run-docker.sh ./build-package.sh gtk2
+	
+	$TERMUX_BUILD_ROOT/scripts/run-docker.sh ./build-package.sh emacs-x
 	export TERMUX_BUILD_OPTS=-q
 
 	# setup gnu c compiler

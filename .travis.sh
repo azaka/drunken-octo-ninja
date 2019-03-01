@@ -38,6 +38,15 @@ travis_script() {
 	wget https://github.com/termux/x11-packages/raw/0e7317b8b4ab3f2ca6a512dfce751ae7cb1951a9/scripts/setup-build-environment.sh -O scripts/setup-build-environment.sh
 	chmod +x scripts/setup-build-environment.sh
 	
+	# git submodules already set up
+	echo -n "[*] Copying x11 packages to build environment... "
+	if cp -a ./unstable-packages/packages/* ./termux-packages/packages/ > /dev/null 2>&1; then
+		echo "ok"
+	else
+		echo "fail"
+		exit 1
+	fi
+	
 	export TERMUX_X11_BUILD_ROOT=$(pwd)
 	$TERMUX_X11_BUILD_ROOT/scripts/travis-build.sh || true
 

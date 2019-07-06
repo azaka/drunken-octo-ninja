@@ -40,15 +40,6 @@ travis_script() {
 	
 	export TERMUX_X11_BUILD_ROOT=$(pwd)
 	$TERMUX_X11_BUILD_ROOT/scripts/travis-build.sh || true
-	
-	# git submodules already set up
-	echo -n "[*] Copying x11 packages to build environment... "
-	if cp -a ./unstable-packages/packages/* ./termux-packages/packages/ > /dev/null 2>&1; then
-		echo "ok"
-	else
-		echo "fail"
-		exit 1
-	fi
 
 	cd termux-packages
 	export TERMUX_BUILD_ROOT=$(pwd)
